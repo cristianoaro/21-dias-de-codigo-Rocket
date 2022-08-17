@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="PT-br">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Desafio 2 - 21 dias de Código</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,700;1,300&family=Roboto:ital,wght@0,400;0,700;1,300&display=swap"
+    rel="stylesheet">
+
+  <style>
+    * {
+      background-color: #2a2a2a;
+
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Roboto', sans-serif;
+    }
+
+    .font-roboto {
+      font-family: 'Roboto', sans-serif;
+    }
+
+    .font-poppins {
+      font-family: 'Poppins', sans-serif;
+    }
+
+    #hero {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      width: 100vw;
+      height: 100vh;
+
+      color: #e2e2e2;
+    }
+
+    .hello-world {
+      font-size: 64px;
+      color: #ff0000
+    }
+
+    .welcome {
+      font-size: 30px;
+      font-weight: 300;
+      font-style: italic;
+    }
+
+    .buttons {
+      margin-block: 15px;
+    }
+
+    .button {
+      background-color: #7676b5;
+      padding: 5px;
+      border: 3px solid #7676b5;
+      border-radius: 10px;
+      font-size: 20px;
+    }
+
+    button:hover {
+      opacity: 0.3;
+      cursor: pointer;
+    }
+
+    .selected {
+      background-color: #2525b3;
+      border: 3px solid #2525b3;
+      color: #666;
+    }
+
+    .selected:hover {
+      cursor: not-allowed;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="hero">
+    <h1 class="hello-world">Hello World</h1>
+    <h5 class="welcome">Bem-vindo ao mundo da programação</h5>
+
+    <br />
+
+    <h3>Relexões do dia:</h3>
+    <q>O impotante não é saber, mas ter o telefone de quem sabe</q>
+    <p>(Brandon, Marllon)</p>
+
+    <br />
+
+    <q>Quem inventou o trabalho, é porque não tinha o que fazer</q>
+    <p>(Brandon, Marllon)</p>
+
+    <br />
+
+    <h3>Escolha sua fonte:</h3>
+    <div class="buttons">
+      <button class="button selected" id="Roboto" onclick="changeRoboto()" disabled>Roboto</button>
+      <button class="button" id="Poppins" onclick="changePoppins()">Poppins</button>
+    </div>
+  </div>
+
+  <script>
+    function changeRoboto() {
+      let element = document.getElementById("hero")
+      element.classList.toggle("font-poppins")
+      element.classList.add("font-roboto")
+
+      document.getElementById("Roboto").classList.toggle("selected")
+      document.getElementById("Roboto").setAttribute("disabled", "disabled")
+
+      document.getElementById("Poppins").classList.toggle("selected")
+      document.getElementById("Poppins").removeAttribute("disabled")
+    }
+
+    function changePoppins() {
+      document.getElementById("hero").classList.toggle("font-roboto")
+      document.getElementById("hero").classList.add("font-poppins")
+
+      document.getElementById("Poppins").classList.toggle("selected")
+      document.getElementById("Poppins").setAttribute("disabled", "disabled")
+
+      document.getElementById("Roboto").classList.toggle("selected")
+      document.getElementById("Roboto").removeAttribute("disabled")
+    }
+  </script>
+</body>
+
+</html>
